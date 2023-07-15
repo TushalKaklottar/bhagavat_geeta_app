@@ -1,8 +1,8 @@
 import 'package:bhagavat_geeta_app/controller/json_provider.dart';
 import 'package:bhagavat_geeta_app/controller/theme_provider.dart';
 import 'package:bhagavat_geeta_app/modals/gita_modals.dart';
-import 'package:bhagavat_geeta_app/view/screen/detail_page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class Home_Page extends StatelessWidget {
@@ -12,6 +12,13 @@ class Home_Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        title:  Text("BHAGVAT GITA",
+        style: GoogleFonts.akshar(
+          fontWeight: FontWeight.w500,
+          letterSpacing: 1
+        ),
+        ),
         actions: [
           GestureDetector(
             onTap: () {
@@ -37,24 +44,49 @@ class Home_Page extends StatelessWidget {
                     Navigator.of(context).pushNamed('detail_page',arguments: index);
                  },
                   child: Card(
-                    elevation: 5,
+                    elevation: 7,
                     shadowColor: Colors.white,
-                    child: Stack(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15)
-                          ),
-                        ),
-                      ]
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15)
                     ),
-                  ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                      Center(
+                            child: CircleAvatar(
+                              radius: 60,
+                              foregroundImage: NetworkImage(data.imageName),
+                            ),
+                          ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(data.id.toString()),
+                              Text("."),
+                              Padding(
+                                padding:  EdgeInsets.only(top: 1,left: 1),
+                                child: Text(data.name.toString(),
+                                style: GoogleFonts.akshar(
+                                  fontSize: 13
+                                ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                )
                 );
-            }, gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            mainAxisSpacing: 30,
+            }, gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            mainAxisSpacing: 40,
             crossAxisCount: 2,
-            crossAxisSpacing: 20,
-            childAspectRatio: 10,
+            crossAxisSpacing: 5,
+            mainAxisExtent: 180,
           ),
           ) : const Center(
             child: CircularProgressIndicator(),

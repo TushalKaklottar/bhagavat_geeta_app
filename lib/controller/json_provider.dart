@@ -7,6 +7,7 @@ import '../modals/gita_modals.dart';
 class JSONProvider extends ChangeNotifier {
 
   List<GitaModal>  allGita = [];
+  int currentIndex = 0;
 
   JSONProvider() {
     loadJson();
@@ -20,7 +21,11 @@ class JSONProvider extends ChangeNotifier {
    debugPrint("LIST: $allData");
 
    allGita = allData.map((e) => GitaModal.fromMap(data: e)).toList();
-
    notifyListeners();
+  }
+
+  changeCurrentPageIndex(int index) {
+    currentIndex = index;
+    notifyListeners();
   }
 }
