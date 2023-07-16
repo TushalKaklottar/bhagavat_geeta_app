@@ -103,7 +103,7 @@ class Home_Page extends StatelessWidget {
               mainAxisSpacing: 40,
               crossAxisCount: 2,
               crossAxisSpacing: 5,
-              mainAxisExtent: 180,
+              mainAxisExtent: 170,
             ),
             ) : const Center(
               child: CircularProgressIndicator(),
