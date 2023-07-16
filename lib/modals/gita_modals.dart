@@ -1,7 +1,5 @@
 class GitaModal {
-
   // Attribute
-
  final int chapter_number;
  final String chapter_summary;
  final String chapter_summary_hindi;
@@ -13,9 +11,7 @@ class GitaModal {
  final String name_transliterated;
  final int verses_count;
 
-
  // Parameterized Constructor
-
  GitaModal ({
    required this.chapter_number,
    required this.chapter_summary,
@@ -30,7 +26,6 @@ class GitaModal {
 });
 
  // factory Constructor
-
 factory GitaModal.fromMap({required Map data}) {
   return GitaModal(
       chapter_number: data['chapter_number'],

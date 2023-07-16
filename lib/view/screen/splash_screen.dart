@@ -24,23 +24,13 @@ class _Splash_screenState extends State<Splash_screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: RadialGradient(
-              colors: [
-            Colors.red.shade400,
-                Colors.black
-
-          ])
-        ),
-        child: Center(
+      body:  Center(
           child: CircleAvatar(
             backgroundColor: Colors.black,
                  radius: 110,
             foregroundImage: NetworkImage("https://wallpapers.com/images/hd/krishna-arjun-four-vedas-of-krishna-0fo6qeopo0oykh4n.jpg",),
             ),
           ),
-      ),
     );
   }
 }

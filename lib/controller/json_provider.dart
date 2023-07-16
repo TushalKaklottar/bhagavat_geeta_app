@@ -16,9 +16,9 @@ class JSONProvider extends ChangeNotifier {
   loadJson() async {
    String res = await rootBundle.loadString("json_file/gita.json");
 
-   debugPrint("RESPONSE: $res");
+   // debugPrint("RESPONSE: $res");
    List allData = jsonDecode(res);
-   debugPrint("LIST: $allData");
+   // debugPrint("LIST: $allData");
 
    allGita = allData.map((e) => GitaModal.fromMap(data: e)).toList();
    notifyListeners();
