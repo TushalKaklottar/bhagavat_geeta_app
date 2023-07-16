@@ -1,5 +1,6 @@
 import 'package:bhagavat_geeta_app/controller/json_provider.dart';
 import 'package:bhagavat_geeta_app/controller/theme_provider.dart';
+import 'package:bhagavat_geeta_app/view/screen/English_traslate.dart';
 import 'package:bhagavat_geeta_app/view/screen/detail_page.dart';
 import 'package:bhagavat_geeta_app/view/screen/home_screen.dart';
 import 'package:bhagavat_geeta_app/view/screen/splash_screen.dart';
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const Splash_screen(),
         'home_screen': (context) => const Home_Page(),
         'detail_page' : (context) => const Detail_Page(),
+        'gita_english': (context) => const Gita_English(),
       },
     );
   }
